@@ -10,17 +10,17 @@ import { AxiosResponse } from 'axios';
   styleUrl: './auth.component.scss'
 })
 export class AuthComponent {
-  data: string[] = [];
+  // data: string[] = [];
 
   constructor(private axiosService: AxiosService) {}
 
-  ngOnInit(): void {
-    this.axiosService.request(
-      "GET",
-      "/messages",
-      {}
-    ).then(
-      (response) =>this.data = response.data
-    )
-}
+//   ngOnInit(): void {
+//     this.axiosService.request(
+//       "GET",
+//       "/messages",
+//       {}
+//     ).then(
+//       (response) =>this.data = response.data
+//     )
+// }
 }

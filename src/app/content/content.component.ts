@@ -25,7 +25,10 @@ export class ContentComponent {
 		        login: input.login,
 		        password: input.password
 		    }
-        )
+        ).then(response => {
+          this.axiosService.setAuthToken(response.data.token);
+          this.componentToShow = "messages";
+        });
 
 	}
 
@@ -39,7 +42,10 @@ export class ContentComponent {
 		        login: input.login,
 		        password: input.password
 		    }
-        )
+        ).then(response => {
+          this.axiosService.setAuthToken(response.data.token);
+          this.componentToShow = "messages";
+        });
 	}
 
 }

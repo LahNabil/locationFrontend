@@ -26,6 +26,7 @@ export class LoginFormComponent {
 
   onSubmitLogin(): void {
     this.onSubmitLoginEvent.emit({"login": this.login, "password": this.password});
+    alert("Connexion réussie!");
   }
 
   onSubmitRegister(): void {

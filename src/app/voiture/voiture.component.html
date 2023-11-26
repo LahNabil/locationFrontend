@@ -1,16 +1,52 @@
 <div class="card">
     <div class="card-body">
       <h5 class="card-title">Backend response</h5>
+      <div class="border">
+        <button class="btn btn-md btn-outline-primary">
+          <i class="fa fa-user"></i>Ajouter une nouvelle voiture</button>
+      </div>
       <p class="card-text">Voitures:</p>
-      <ul>
-        <li *ngFor="let car of data"><p>{{car.matricule}}
-        {{car.date}}
-        {{car.carburant}}
-        {{car.couleur}}
-        {{car.carburant}}
-        {{car.marque}}
-        {{car.modele}}
-        </p></li>
-      </ul>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Matricule</th>
+            <th>Date</th>
+            <th>Carburant</th>
+            <th>Couleur</th>
+            <th>Marque</th>
+            <th>Modele</th>
+            <th>Prix</th>
+            <th>Photo</th>
+            <th>Assurance</th>
+            <th>Agence</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let car of data">
+            <td>{{ car.id }}</td>
+            <td>{{ car.matricule }}</td>
+            <td>{{ car.date | date:'short' }}</td> <!-- Use Angular date pipe for formatting -->
+            <td>{{ car.carburant }}</td>
+            <td>{{ car.couleur }}</td>
+            <td>{{ car.marque }}</td>
+            <td>{{ car.modele }}</td>
+            <td>{{ car.prix }}</td>
+            <td>{{ car.photo }}</td>
+            <td>{{ car.assuranceId }}</td>
+            <td>{{ car.agenceId }}</td>
+            <td>
+                <button class="btn btn-sm btn-info">
+                  <i class="fa fa-search"></i>Details</button>
+                <button class="btn btn-sm btn-warning">
+                  <i class="fa fa-edit"></i>Edit</button>
+                <button class="btn btn-sm btn-danger">
+                  <i class="fa fa-remove"></i>Delete</button>
+              </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-</div>
+  </div>
+  

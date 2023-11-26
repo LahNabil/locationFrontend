@@ -14,8 +14,8 @@ export class Voiture {
     agenceId!: number; // Assuming Agence is another model
   
     // Instances of related models
-    assurance?: Assurance;
-    agence?: Agence;
+    // assurance?: Assurance;
+    // agence?: Agence;
   
     constructor(
       id: number,
@@ -46,15 +46,15 @@ export class Voiture {
     }
   }
   
-  // assurance.model.ts
-  export interface Assurance {
-    id: number;
-    // Define other properties of Assurance if needed
-  }
+//   // assurance.model.ts
+//   export interface Assurance {
+//     id: number;
+//     // Define other properties of Assurance if needed
+//   }
   
-  // agence.model.ts
-  export interface Agence {
-    id: number;
-    // Define other properties of Agence if needed
-  }
+//   // agence.model.ts
+//   export interface Agence {
+//     id: number;
+//     // Define other properties of Agence if needed
+//   }
   

@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';
 import { ButtonsComponent } from './buttons/buttons.component';
 import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
+import { SideBarComponent } from './side-bar/side-bar.component';
+import { LocationComponent } from './location/location.component';
+import { VoitureComponent } from './voiture/voiture.component';
 
 
 @NgModule({
@@ -23,7 +26,10 @@ import { AdminComponent } from './admin/admin.component';
     ContentComponent,
     ButtonsComponent,
     HomeComponent,
-    AdminComponent
+    AdminComponent,
+    SideBarComponent,
+    LocationComponent,
+    VoitureComponent
   ],
   imports: [
     BrowserModule,

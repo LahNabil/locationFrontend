@@ -14,6 +14,7 @@ import { AdminComponent } from './admin/admin.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { LocationComponent } from './location/location.component';
 import { VoitureComponent } from './voiture/voiture.component';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -28,13 +29,14 @@ import { VoitureComponent } from './voiture/voiture.component';
     HomeComponent,
     AdminComponent,
     SideBarComponent,
-    LocationComponent,
-    VoitureComponent
+    VoitureComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

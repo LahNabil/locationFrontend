@@ -2,8 +2,9 @@
     <div class="card-body">
       <h5 class="card-title">Backend response</h5>
       <div class="border">
-        <button class="btn btn-md btn-outline-primary">
-          <i class="fa fa-user"></i>Ajouter une nouvelle voiture</button>
+        <button class="btn btn-md btn-outline-primary" (click)="open(content)">
+          <i class="fa fa-user"></i>Ajouter une nouvelle voiture
+        </button>
       </div>
       <p class="card-text">Voitures:</p>
       <table class="table table-bordered">
@@ -27,7 +28,7 @@
           <tr *ngFor="let car of data">
             <td>{{ car.id }}</td>
             <td>{{ car.matricule }}</td>
-            <td>{{ car.date | date:'short' }}</td> <!-- Use Angular date pipe for formatting -->
+            <td>{{ car.date }}</td> <!-- Use Angular date pipe for formatting -->
             <td>{{ car.carburant }}</td>
             <td>{{ car.couleur }}</td>
             <td>{{ car.marque }}</td>
@@ -48,5 +49,74 @@
         </tbody>
       </table>
     </div>
+    <ng-template #content let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">New Friend</h4>
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+          <div class="form-group">
+            <label for="matricule">Matricule</label>
+            <div class="input-group">
+              <input id="matricule" name="matricule" class="form-control" [(ngModel)]="newCar.matricule">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="date">Date</label>
+            <div class="input-group">
+              <input id="date" name="date" class="form-control" ngbDatepicker #dp="ngbDatepicker">
+              <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+                <i class="fa fa-calendar"></i>
+              </button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="carburant">Carburant</label>
+            <div class="input-group">
+              <input id="carburant" name="carburant" class="form-control" ngModel>
+            </div>
+            <div class="form-group">
+              <label for="couleur">Couleur</label>
+              <div class="input-group">
+                <input id="couleur" name="couleur" class="form-control" ngModel>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="marque">Marque</label>
+            <div class="input-group">
+              <input id="marque" name="marque" class="form-control" ngModel>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="modele">Modele</label>
+            <div class="input-group">
+              <input id="modele" name="modele" class="form-control" ngModel>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="prix">Prix</label>
+            <div class="input-group">
+              <input id="prix" name="prix" class="form-control" ngModel>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="photo">Photo</label>
+            <div class="input-group">
+              <input id="photo" name="photo" class="form-control" ngModel>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="border text-center">
+        <button class="btn btn-info" (click)="onSubmit(f)">Submit</button>
+        </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
+      </div>
+    </ng-template>
   </div>
   

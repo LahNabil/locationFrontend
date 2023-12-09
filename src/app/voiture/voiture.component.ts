@@ -13,7 +13,7 @@ import { NgForm } from '@angular/forms';
 export class VoitureComponent {
 
   data: Voiture[] = [];
-  newCar: Voiture = new Voiture();
+  newCar!: Voiture;
   
   closeResult!: string;
   constructor(private axiosService: AxiosService, private modalService: NgbModal){
@@ -40,6 +40,30 @@ export class VoitureComponent {
     //   });
     // this.modalService.dismissAll(); //dismiss the modal
   }
+
+  deleteVoiture(id: number): void {
+    const confirmation = window.confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?');
+    if(confirmation){
+    this.axiosService.request(
+      'DELETE',
+      `/voitures/delete/${id}`,
+      {}
+    ).then(
+      () => {
+        console.log(`Voiture avec l'ID ${id} supprimée avec succès.`);
+        window.location.reload();
+      },
+      (error)=>{
+        console.log('Erreur');
+      }
+    );
+    } else {
+      console.log('suppression annulée');
+    }
+  }
+  
+
+
   addVoiture(newVoiture: Voiture): void {
     this.axiosService.request(
       'POST',

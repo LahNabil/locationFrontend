@@ -38,12 +38,13 @@
             <td>{{ car.assuranceId }}</td>
             <td>{{ car.agenceId }}</td>
             <td>
-                <button class="btn btn-sm btn-info">
-                  <i class="fa fa-search"></i>Details</button>
+                
                 <button class="btn btn-sm btn-warning">
                   <i class="fa fa-edit"></i>Edit</button>
-                <button class="btn btn-sm btn-danger">
+                  
+                <button class="btn btn-sm btn-danger" (click)="deleteVoiture(car.id)">
                   <i class="fa fa-remove"></i>Delete</button>
+                  
               </td>
           </tr>
         </tbody>
@@ -51,7 +52,7 @@
     </div>
     <ng-template #content let-modal>
       <div class="modal-header">
-        <h4 class="modal-title" id="modal-basic-title">New Friend</h4>
+        <h4 class="modal-title" id="modal-basic-title">Nouvelle Voiture</h4>
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
           <span aria-hidden="true">&times;</span>
         </button>

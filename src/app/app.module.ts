@@ -16,6 +16,7 @@ import { LocationComponent } from './location/location.component';
 import { VoitureComponent } from './voiture/voiture.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { AssuranceComponent } from './assurance/assurance.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     AdminComponent,
     SideBarComponent,
     VoitureComponent,
-    LocationComponent
+    LocationComponent,
+    AssuranceComponent
   ],
   imports: [
     BrowserModule,

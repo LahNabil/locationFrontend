@@ -2,9 +2,29 @@
     <div class="card-body">
       <h5 class="card-title">Backend response</h5>
       <div class="border">
-        <button class="btn btn-md btn-outline-primary" (click)="open(content)">
-          <i class="fa fa-user"></i>Ajouter une nouvelle voiture
-        </button>
+        <h3> Ajouter Voiture</h3>
+      <div class="modal-body">
+        <form class="form" name="registerForm" (ngSubmit) = "ngSubmit()">
+          <input type="text" class="form-control w-50 " placeholder="Matricule"  [(ngModel)] = "voiture.matricule" name="matricule">
+          <input type="text" class="form-control w-50 " placeholder="Date"  [(ngModel)] = "voiture.date" name="date">
+         
+          <!-- <input id="date" name="date" class="form-control" ngbDatepicker #dp="ngbDatepicker">
+           <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+            <i class="fa fa-calendar"></i>
+          </button> -->
+          <input type="checkbox" class="form-check-input" id="dispo" [(ngModel)]= "voiture.dispo" name="dispo">
+          <label class="form-check-label" for="dispo">Disponible</label>
+          <input type="text" class="form-control w-50 " placeholder="carburant"  [(ngModel)] = "voiture.carburant" name="carburant">
+          <input type="text" class="form-control w-50 " placeholder="Couleur"  [(ngModel)] = "voiture.couleur" name="couleur">
+          <input type="text" class="form-control w-50 " placeholder="Marque"  [(ngModel)] = "voiture.marque" name="marque">
+          <input type="text" class="form-control w-50 " placeholder="Modele"  [(ngModel)] = "voiture.modele" name="modele">
+          <input type="number" class="form-control w-50 " placeholder="Prix"  [(ngModel)] = "voiture.prix" name="prix">
+          <input type="text" class="form-control w-50 " placeholder="Photo"  [(ngModel)] = "voiture.photo" name="photo">
+          <div class="border text-center">
+            <button type="submit" class="btn btn-outline-success mt-3">Add</button>
+            </div>
+        </form>
+        </div>
       </div>
       <p class="card-text">Voitures:</p>
       <table class="table table-bordered">
@@ -25,47 +45,43 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let car of data">
-            <td>{{ car.id }}</td>
-            <td>{{ car.matricule }}</td>
-            <td>{{ car.date }}</td> <!-- Use Angular date pipe for formatting -->
-            <td>{{ car.carburant }}</td>
-            <td>{{ car.couleur }}</td>
-            <td>{{ car.marque }}</td>
-            <td>{{ car.modele }}</td>
-            <td>{{ car.prix }}</td>
-            <td>{{ car.photo }}</td>
-            <td>{{ car.assuranceId }}</td>
-            <td>{{ car.agenceId }}</td>
+          <tr *ngFor="let voiture of voitures">
+            <td>{{ voiture.id }}</td>
+            <td>{{ voiture.matricule }}</td>
+            <td>{{ voiture.date }}</td> <!-- Use Angular date pipe for formatting -->
+            <td>{{ voiture.carburant }}</td>
+            <td>{{ voiture.couleur }}</td>
+            <td>{{ voiture.marque }}</td>
+            <td>{{ voiture.modele }}</td>
+            <td>{{ voiture.prix }}</td>
+            <td>{{ voiture.photo }}</td>
+            <td>{{ voiture.assuranceId }}</td>
+            <td>{{ voiture.agenceId }}</td>
             <td>
                 
                 <button class="btn btn-sm btn-warning">
                   <i class="fa fa-edit"></i>Edit</button>
+                  <button class="btn btn-outline-danger me-2" (click) = "deleteVoiture(voiture.id)">Delete</button>
                   
-                <button class="btn btn-sm btn-danger" (click)="deleteVoiture(car.id)">
-                  <i class="fa fa-remove"></i>Delete</button>
+                <!-- <button class="btn btn-sm btn-danger">
+                  <i class="fa fa-remove"></i>Delete</button> -->
+                  <!-- (click)="deleteVoiture(voiture.id) -->
                   
               </td>
           </tr>
         </tbody>
       </table>
     </div>
-    <ng-template #content let-modal>
-      <div class="modal-header">
+      <!-- <div class="modal-header">
         <h4 class="modal-title" id="modal-basic-title">Nouvelle Voiture</h4>
         <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
           <span aria-hidden="true">&times;</span>
         </button>
-      </div>
-      <div class="modal-body">
-        <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-          <div class="form-group">
-            <label for="matricule">Matricule</label>
-            <div class="input-group">
-              <input id="matricule" name="matricule" class="form-control" [(ngModel)]="newCar.matricule">
-            </div>
-          </div>
-          <div class="form-group">
+      </div> -->
+      
+          
+          
+          <!-- <div class="form-group">
             <label for="date">Date</label>
             <div class="input-group">
               <input id="date" name="date" class="form-control" ngbDatepicker #dp="ngbDatepicker">
@@ -73,8 +89,8 @@
                 <i class="fa fa-calendar"></i>
               </button>
             </div>
-          </div>
-          <div class="form-group">
+          </div> -->
+          <!-- <div class="form-group">
             <label for="carburant">Carburant</label>
             <div class="input-group">
               <input id="carburant" name="carburant" class="form-control" ngModel>
@@ -85,8 +101,8 @@
                 <input id="couleur" name="couleur" class="form-control" ngModel>
               </div>
             </div>
-          </div>
-          <div class="form-group">
+          </div> -->
+          <!-- <div class="form-group">
             <label for="marque">Marque</label>
             <div class="input-group">
               <input id="marque" name="marque" class="form-control" ngModel>
@@ -97,27 +113,23 @@
             <div class="input-group">
               <input id="modele" name="modele" class="form-control" ngModel>
             </div>
-          </div>
-          <div class="form-group">
+          </div> -->
+          <!-- <div class="form-group">
             <label for="prix">Prix</label>
             <div class="input-group">
               <input id="prix" name="prix" class="form-control" ngModel>
             </div>
-          </div>
-          <div class="form-group">
+          </div> -->
+          <!-- <div class="form-group">
             <label for="photo">Photo</label>
             <div class="input-group">
               <input id="photo" name="photo" class="form-control" ngModel>
             </div>
-          </div>
-        </form>
-      </div>
-      <div class="border text-center">
-        <button class="btn btn-info" (click)="onSubmit(f)">Submit</button>
-        </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Cancel</button>
-      </div>
-    </ng-template>
+          </div> -->
+        
+      
+      
+      
+    
   </div>
   

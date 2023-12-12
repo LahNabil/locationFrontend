@@ -15,6 +15,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { LocationComponent } from './location/location.component';
 import { VoitureComponent } from './voiture/voiture.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

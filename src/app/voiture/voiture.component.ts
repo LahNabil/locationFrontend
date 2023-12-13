@@ -48,6 +48,9 @@ export class VoitureComponent {
   //     (response)=> this.voitures = response.data
   //   )
   // }
+  updateVoiture(id : number | undefined){
+    this.router.navigate(['admin','voiture','update', id]);
+      }
   
   addVoiture(){
     this.voitureService.addVoiture(this.voiture).subscribe(data=>{

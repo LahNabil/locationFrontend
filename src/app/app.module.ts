@@ -17,6 +17,7 @@ import { VoitureComponent } from './voiture/voiture.component';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AssuranceComponent } from './assurance/assurance.component';
+import { UpdateVoitureComponent } from './update-voiture/update-voiture.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { AssuranceComponent } from './assurance/assurance.component';
     SideBarComponent,
     VoitureComponent,
     LocationComponent,
-    AssuranceComponent
+    AssuranceComponent,
+    UpdateVoitureComponent
   ],
   imports: [
     BrowserModule,

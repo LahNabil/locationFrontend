@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { AdminComponent } from './admin/admin.component';
 import { LocationComponent } from './location/location.component';
 import { VoitureComponent } from './voiture/voiture.component';
+import { UpdateVoitureComponent } from './update-voiture/update-voiture.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
    component: AdminComponent,
    children: [
     { path: 'location', component: LocationComponent},
-    { path: 'voiture', component: VoitureComponent}
+    { path: 'voiture', component: VoitureComponent},
+    { path: 'voiture/update/:id', component: UpdateVoitureComponent}
    ]
   }
   

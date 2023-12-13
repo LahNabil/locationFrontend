@@ -39,6 +39,7 @@
             <th>Modele</th>
             <th>Prix</th>
             <th>Photo</th>
+            <th>Disponible</th>
             <th>Assurance</th>
             <th>Agence</th>
             <th>Action</th>
@@ -55,11 +56,12 @@
             <td>{{ voiture.modele }}</td>
             <td>{{ voiture.prix }}</td>
             <td>{{ voiture.photo }}</td>
+            <td>{{voiture.dispo}}</td>
             <td>{{ voiture.assuranceId }}</td>
             <td>{{ voiture.agenceId }}</td>
             <td>
                 
-                <button class="btn btn-sm btn-warning">
+                <button class="btn btn-sm btn-warning" (click) = "updateVoiture(voiture.id)">
                   <i class="fa fa-edit"></i>Edit</button>
                   <button class="btn btn-outline-danger me-2" (click) = "deleteVoiture(voiture.id)">Delete</button>
                   

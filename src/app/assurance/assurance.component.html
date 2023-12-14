@@ -1,1 +1,62 @@
-<p>assurance works!</p>
+<div class="card">
+    <div class="card-body">
+      <div class="border">
+        <h3> Ajouter Assurance</h3>
+      <div class="modal-body">
+        <form class="form" name="registerForm" (ngSubmit) = "ngSubmit()">
+          <input type="text" class="form-control w-50 " placeholder="Nom"  [(ngModel)] = "assurance.nom" name="nom">
+          <input type="text" class="form-control w-50 " placeholder="Type"  [(ngModel)] = "assurance.type" name="type">
+          <input type="text" class="form-control w-50" placeholder="Prix" [(ngModel)] = "assurance.prix" name="prix">
+          <input type="text" class="form-control w-50 " placeholder="Date_Debut"  [(ngModel)] = "assurance.dated" name="dateD">
+          <input type="text" class="form-control w-50 " placeholder="Date_Fin"  [(ngModel)] = "assurance.datef" name="dateF">
+          <!-- <input id="date" name="date" class="form-control" ngbDatepicker #dp="ngbDatepicker">
+           <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+            <i class="fa fa-calendar"></i>
+          </button> -->
+          
+          <div class="border text-center">
+            <button type="submit" class="btn btn-outline-success mt-3">Add</button>
+            </div>
+        </form>
+        </div>
+      </div>
+      <p class="card-text">Assurances:</p>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Type</th>
+            <th>Prix</th>
+            <th>Date_Debut</th>
+            <th>Date_Fin</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let assurance of assurances">
+            <td>{{ assurance.id }}</td>
+            <td>{{ assurance.nom }}</td>
+            <td>{{ assurance.type }}</td> <!-- Use Angular date pipe for formatting -->
+            <td>{{ assurance.prix }}</td>
+            <td>{{ assurance.dated | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+            <td>{{ assurance.datef | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+
+            <td>
+                <button class="btn btn-sm btn-warning">
+                  <i class="fa fa-edit"></i>Edit</button>
+                  <button class="btn btn-outline-danger me-2">Delete</button>
+                  
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      
+        
+      
+      
+      
+    
+ 
+  

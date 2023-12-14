@@ -6,17 +6,17 @@ import { AdminComponent } from './admin/admin.component';
 import { LocationComponent } from './location/location.component';
 import { VoitureComponent } from './voiture/voiture.component';
 import { UpdateVoitureComponent } from './update-voiture/update-voiture.component';
+import { AssuranceComponent } from './assurance/assurance.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: '', component: HomeComponent},
-  
   { path: 'admin',
    component: AdminComponent,
    children: [
     { path: 'location', component: LocationComponent},
     { path: 'voiture', component: VoitureComponent},
-    { path: 'location', component: LocationComponent},
+    { path: 'assurance', component: AssuranceComponent},
     { path: 'voiture/update/:id', component: UpdateVoitureComponent}
    ]
   }

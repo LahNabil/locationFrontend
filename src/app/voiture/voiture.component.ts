@@ -6,7 +6,6 @@ import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 
-
 @Component({
   selector: 'app-voiture',
   templateUrl: './voiture.component.html',
@@ -18,6 +17,7 @@ export class VoitureComponent {
   voiture : Voiture = new Voiture();
   
   // closeResult!: string;
+  
   // constructor(private axiosService: AxiosService, private modalService: NgbModal){
 
   // }
@@ -61,63 +61,32 @@ export class VoitureComponent {
   ngSubmit(){
     this.addVoiture();
   }
+
+  
+
+ 
+  
+
+
+  
+// open(content: any) {
+//   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+//     this.closeResult = `Closed with: ${result}`;
+//   }, (reason) => {
+//     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+//   });
+// }
+
+// private getDismissReason(reason: any): string {
+//   if (reason === ModalDismissReasons.ESC) {
+//     return 'by pressing ESC';
+//   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+//     return 'by clicking on a backdrop';
+//   } else {
+//     return `with: ${reason}`;
+//   }
+// }
 }
-  
 
-  // addVoiture(newVoiture: Voiture): void {
-  //   this.axiosService.request(
-  //     'POST',
-  //     '/voitures/add',
-  //     { newVoiture}
-  //   ).then(
-  //     (response) => {this.data.push(response.data);
-  //     },
-  //     (error) => {
-  //       // Gérez l'erreur, par exemple, affichez un message d'erreur
-  //       console.error('Erreur lors de l\'ajout de la voiture :', error);
-  //     }
-  //   );
-  // }
-
-  // deleteVoiture(id: number): void {
-  //   const confirmation = window.confirm('Êtes-vous sûr de vouloir supprimer cette voiture ?');
-  //   if(confirmation){
-  //   this.axiosService.request(
-  //     'DELETE',
-  //     `/voitures/delete/${id}`,
-  //     {}
-  //   ).then(
-  //     () => {
-  //       console.log(`Voiture avec l'ID ${id} supprimée avec succès.`);
-  //       window.location.reload();
-  //     },
-  //     (error)=>{
-  //       console.log('Erreur');
-  //     }
-  //   );
-  //   } else {
-  //     console.log('suppression annulée');
-  //   }
-  // }
-  
-
-
-  
-  // open(content: any) {
-  //   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-  //     this.closeResult = `Closed with: ${result}`;
-  //   }, (reason) => {
-  //     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  //   });
-  // }
-  // private getDismissReason(reason: any): string {
-  //   if (reason === ModalDismissReasons.ESC) {
-  //     return 'by pressing ESC';
-  //   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-  //     return 'by clicking on a backdrop';
-  //   } else {
-  //     return `with: ${reason}`;
-  //   }
-  // }
 
 

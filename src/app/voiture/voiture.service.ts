@@ -15,7 +15,7 @@ addVoiture(voiture: Voiture): Observable<Object>{
 return this.httpClient.post(`${this.baseUrl}/add`, voiture);
 }
 getVoitureById(id : number |undefined): Observable<Voiture>{
-  return this.httpClient.get<Voiture>(`${this.baseUrl}/id/${id}`)
+  return this.httpClient.get<Voiture>(`${this.baseUrl}/${id}`)
   }
 
 getVoitureList() : Observable<Voiture[]>{
@@ -25,8 +25,9 @@ deleteVoiture(id:number | undefined) : Observable<Object>{
     return this.httpClient.delete(`${this.baseUrl}/delete/${id}`);
     }
 updateVoiture(id:number, voiture : Voiture): Observable<Object>{
-       return this.httpClient.put(`${this.baseUrl}/id/${id}`,voiture);
+       return this.httpClient.put(`${this.baseUrl}/edit/${id}`,voiture);
 }
+
 
 // getCategoriesList() : Observable<Categorie[]>{
 //   return this.httpClient.get<Categorie[]>(`${this.baseUrl}`);

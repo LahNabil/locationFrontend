@@ -1,1 +1,19 @@
-<p>update-voiture works!</p>
+<h3 class="ms-5 p-3 text-center">Modifier Voiture</h3>
+<div class="p-5">
+    <form class="form" name="registerForm" (ngSubmit) = "ngSubmit()">
+        <input type="text" class="form-control w-50 " placeholder="Matricule"  [(ngModel)] = "voiture.matricule" name="matricule">
+        <input type="text" class="form-control w-50 " placeholder="Date"  [(ngModel)] = "voiture.date" name="date">
+        <input type="checkbox" class="form-check-input" id="dispo" [(ngModel)]= "voiture.dispo" name="dispo">
+        <label class="form-check-label" for="dispo">Disponible</label>
+        <input type="text" class="form-control w-50 " placeholder="carburant"  [(ngModel)] = "voiture.carburant" name="carburant">
+        <input type="text" class="form-control w-50 " placeholder="Couleur"  [(ngModel)] = "voiture.couleur" name="couleur">
+        <input type="text" class="form-control w-50 " placeholder="Marque"  [(ngModel)] = "voiture.marque" name="marque">
+        <input type="text" class="form-control w-50 " placeholder="Modele"  [(ngModel)] = "voiture.modele" name="modele">
+        <input type="number" class="form-control w-50 " placeholder="Prix"  [(ngModel)] = "voiture.prix" name="prix">
+        <input type="text" class="form-control w-50 " placeholder="Photo"  [(ngModel)] = "voiture.photo" name="photo">
+        <div class="border text-center">
+            <button type="submit" class="btn btn-outline-secondary mt-3">Update</button>
+          </div>
+      </form>
+
+</div>

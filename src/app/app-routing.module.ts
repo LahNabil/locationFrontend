@@ -10,12 +10,13 @@ import { UpdateVoitureComponent } from './update-voiture/update-voiture.componen
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: '', component: HomeComponent},
-  { path: 'location', component: LocationComponent},
+  
   { path: 'admin',
    component: AdminComponent,
    children: [
     { path: 'location', component: LocationComponent},
     { path: 'voiture', component: VoitureComponent},
+    { path: 'location', component: LocationComponent},
     { path: 'voiture/update/:id', component: UpdateVoitureComponent}
    ]
   }

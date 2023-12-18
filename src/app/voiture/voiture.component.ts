@@ -5,6 +5,10 @@ import { VoitureService } from './voiture.service'
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
+import { Assurance } from '../assurance/assurance.model';
+import { AssuranceService } from '../assurance/assurance.service';
+import { Agence } from '../agence/agence.model';
+import { AgenceService } from '../agence/agence.service';
 
 @Component({
   selector: 'app-voiture',
@@ -15,19 +19,31 @@ export class VoitureComponent {
 
   voitures: Voiture[] = [];
   voiture : Voiture = new Voiture();
+  assurances: Assurance[] = [];
+  agences: Agence[] = [];
   
   // closeResult!: string;
   
   // constructor(private axiosService: AxiosService, private modalService: NgbModal){
 
   // }
-  constructor(private voitureService: VoitureService, private router: Router, private modalService: NgbModal){
+  constructor(private agenceService: AgenceService,private assuranceService: AssuranceService,private voitureService: VoitureService, private router: Router, private modalService: NgbModal){
 
   }
   private getVoiture(){
     this.voitureService.getVoitureList().subscribe(data => {
     this.voitures = data;
     });
+  }
+  private getAssurance(){
+    this.assuranceService.getAssuranceList().subscribe(data => {
+    this.assurances = data;
+    });
+  }
+  private getAgence(){
+    this.agenceService.getAgenceList().subscribe(data=>{
+      this.agences = data;
+    })
   }
   deleteVoiture(id : number|undefined){
     this.voitureService.deleteVoiture(id).subscribe(data =>{
@@ -37,6 +53,8 @@ export class VoitureComponent {
   }
   ngOnInit(): void {
     this.getVoiture();
+    this.getAssurance();
+    this.getAgence();
     
   }
   // ngOnInit(): void{

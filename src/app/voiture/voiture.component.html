@@ -20,9 +20,15 @@
           <input type="text" class="form-control w-50 " placeholder="Modele"  [(ngModel)] = "voiture.modele" name="modele">
           <input type="number" class="form-control w-50 " placeholder="Prix"  [(ngModel)] = "voiture.prix" name="prix">
           <input type="text" class="form-control w-50 " placeholder="Photo"  [(ngModel)] = "voiture.photo" name="photo">
+          <label for="assurance" class="lbl">Assurance</label>
           <select class="form-select w-50 mt-3" [(ngModel)] = "voiture.assurance" name="assurance">
-            <option value="" disabled selected>Select a category</option>
-            <option *ngFor="let assurances of assurance" [value]="category.id">{{ category.id }} - {{category.labelle}}</option>
+            <option value="" disabled selected>Sélectionnez une assurance</option>
+            <option *ngFor="let assurance of assurances" [value]="assurance.id">{{ assurance.id }} - {{assurance.nom}}</option>
+          </select>
+          <label for="assurance" class="lbl">Agence</label>
+          <select class="form-select w-50 mt-3" [(ngModel)] = "voiture.agence" name="agence">
+            <option value="" disabled [selected]="!voiture.assurance">Sélectionnez une agence </option>
+            <option *ngFor="let agence of agences" [value]="agence.id">{{ agence.id }} - {{agence.nom}}</option>
           </select>
           <div class="border text-center">
             <button type="submit" class="btn btn-outline-success mt-3">Add</button>
@@ -61,8 +67,11 @@
             <td>{{ voiture.prix }}</td>
             <td>{{ voiture.photo }}</td>
             <td>{{ voiture.dispo ? 'Disponible' : 'Non disponible' }}</td>
-            <td>{{ voiture.agence }}</td>
-            <td>{{ voiture.assurance }}</td>
+            <td>{{ voiture.assurance?.nom}}</td>
+            <!-- <td>
+              <span *ngFor="let assurance of assurances">{{ assurance.nom }} </span>
+            </td> -->
+            <td>{{ voiture.agence?.nom }}</td>
             <td>
                 
                 <button class="btn btn-sm btn-warning" (click) = "updateVoiture(voiture.id)">

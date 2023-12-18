@@ -3,7 +3,7 @@ export class Assurance {
     nom: string | undefined;
     type: string | undefined;
     prix: number | undefined;
-    dated !: Date| undefined;
-    datef !: Date| undefined;
+    date_debut : Date | undefined;
+    date_fin : Date | undefined;
    
 }

@@ -7,8 +7,8 @@
           <input type="text" class="form-control w-50 " placeholder="Nom"  [(ngModel)] = "assurance.nom" name="nom">
           <input type="text" class="form-control w-50 " placeholder="Type"  [(ngModel)] = "assurance.type" name="type">
           <input type="text" class="form-control w-50" placeholder="Prix" [(ngModel)] = "assurance.prix" name="prix">
-          <input type="text" class="form-control w-50 " placeholder="Date_Debut"  [(ngModel)] = "assurance.dated" name="dateD">
-          <input type="text" class="form-control w-50 " placeholder="Date_Fin"  [(ngModel)] = "assurance.datef" name="dateF">
+          <input type="text" class="form-control w-50 " placeholder="Date_Debut"  [(ngModel)] = "assurance.date_debut" name="date_debut">
+          <input type="text" class="form-control w-50 " placeholder="Date_Fin"  [(ngModel)] = "assurance.date_fin" name="date_fin">
           <!-- <input id="date" name="date" class="form-control" ngbDatepicker #dp="ngbDatepicker">
            <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
             <i class="fa fa-calendar"></i>
@@ -39,13 +39,13 @@
             <td>{{ assurance.nom }}</td>
             <td>{{ assurance.type }}</td> <!-- Use Angular date pipe for formatting -->
             <td>{{ assurance.prix }}</td>
-            <td>{{ assurance.dated | date:'yyyy-MM-dd HH:mm:ss' }}</td>
-            <td>{{ assurance.datef | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+            <td>{{ assurance.date_debut }}</td>
+            <td>{{ assurance.date_fin }}</td>
 
             <td>
-                <button class="btn btn-sm btn-warning">
+                <button class="btn btn-sm btn-warning" (click)= "updateAssurance(assurance.id)">
                   <i class="fa fa-edit"></i>Edit</button>
-                  <button class="btn btn-outline-danger me-2">Delete</button>
+                  <button class="btn btn-outline-danger me-2" (click) = "deleteAssurance(assurance.id)">Delete</button>
                   
               </td>
           </tr>

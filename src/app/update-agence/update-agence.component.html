@@ -1,0 +1,13 @@
+<h3 class="ms-5 p-3 text-center">Modifier Agence</h3>
+<div class="p-5">
+    <form class="form" name="registerForm" (ngSubmit) = "ngSubmit()">
+      <input type="text" class="form-control w-50 " placeholder="Nom"  [(ngModel)] = "agence.nom" name="nom">
+      <input type="text" class="form-control w-50 " placeholder="Ville"  [(ngModel)] = "agence.ville" name="ville">
+      <input type="text" class="form-control w-50" placeholder="Adresse" [(ngModel)] = "agence.adresse" name="adresse">
+      <input type="text" class="form-control w-50 " placeholder="Chiffre d'affaire"  [(ngModel)] = "agence.ca" name="ca">
+      <input type="text" class="form-control w-50 " placeholder="Nombre de voiture"  [(ngModel)] = "agence.nbrV" name="nbrV">
+      <div class="border text-center">
+        <button type="submit" class="btn btn-outline-secondary mt-3">Update</button>
+      </div>
+    </form>
+</div>

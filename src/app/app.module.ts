@@ -18,6 +18,9 @@ import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { AssuranceComponent } from './assurance/assurance.component';
 import { UpdateVoitureComponent } from './update-voiture/update-voiture.component';
+import { UpdateAssuranceComponent } from './update-assurance/update-assurance.component';
+import { AgenceComponent } from './agence/agence.component';
+import { UpdateAgenceComponent } from './update-agence/update-agence.component';
 
 
 @NgModule({
@@ -35,7 +38,10 @@ import { UpdateVoitureComponent } from './update-voiture/update-voiture.componen
     VoitureComponent,
     LocationComponent,
     AssuranceComponent,
-    UpdateVoitureComponent
+    UpdateVoitureComponent,
+    UpdateAssuranceComponent,
+    AgenceComponent,
+    UpdateAgenceComponent
   ],
   imports: [
     BrowserModule,

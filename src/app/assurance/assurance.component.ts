@@ -28,6 +28,18 @@ export class AssuranceComponent {
       window.location.reload();
     });
   }
+  updateAssurance(id : number | undefined){
+    this.router.navigate(['admin','assurance','update', id]);
+      }
+  deleteAssurance(id: number){
+    const isConfirmed = window.confirm("Êtes-vous sûr de vouloir supprimer cette assurance ?");
+    if (isConfirmed) {
+      this.assuranceService.deleteAssurance(id).subscribe(data => {
+        window.location.reload();
+      });
+    }
+  }
+  
   ngSubmit(){
     this.addAssurance();
   }

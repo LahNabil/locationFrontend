@@ -1,0 +1,62 @@
+<div class="card">
+    <div class="card-body">
+      <div class="border">
+        <h3> Ajouter Assurance</h3>
+      <div class="modal-body">
+        <form class="form" name="registerForm" (ngSubmit) = "ngSubmit()">
+          <input type="text" class="form-control w-50 " placeholder="Nom"  [(ngModel)] = "agence.nom" name="nom">
+          <input type="text" class="form-control w-50 " placeholder="Ville"  [(ngModel)] = "agence.ville" name="ville">
+          <input type="text" class="form-control w-50" placeholder="Adresse" [(ngModel)] = "agence.adresse" name="adresse">
+          <input type="text" class="form-control w-50 " placeholder="Chiffre d'affaire"  [(ngModel)] = "agence.ca" name="ca">
+          <input type="text" class="form-control w-50 " placeholder="nombre de voiture"  [(ngModel)] = "agence.nbrV" name="nbrV">
+          <!-- <input id="date" name="date" class="form-control" ngbDatepicker #dp="ngbDatepicker">
+           <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+            <i class="fa fa-calendar"></i>
+          </button> -->
+          
+          <div class="border text-center">
+            <button type="submit" class="btn btn-outline-success mt-3">Add</button>
+            </div>
+        </form>
+        </div>
+      </div>
+      <p class="card-text">Assurances:</p>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Ville</th>
+            <th>Adresse</th>
+            <th>Chiffre d'affaire</th>
+            <th>nombre de voiture</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let agence of agences">
+            <td>{{ agence.id }}</td>
+            <td>{{ agence.nom }}</td>
+            <td>{{ agence.ville }}</td> <!-- Use Angular date pipe for formatting -->
+            <td>{{ agence.adresse }}</td>
+            <td>{{ agence.ca }}</td>
+            <td>{{ agence.nbrV }}</td>
+
+            <td>
+                <button class="btn btn-sm btn-warning" (click)= "updateAgence(agence.id)">
+                  <i class="fa fa-edit"></i>Edit</button>
+                  <button class="btn btn-outline-danger me-2" (click) = "deleteAgence(agence.id)">Delete</button>
+                  
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+      
+        
+      
+      
+      
+    
+ 
+  

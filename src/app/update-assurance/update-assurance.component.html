@@ -1,0 +1,13 @@
+<h3 class="ms-5 p-3 text-center">Modifier Assurance</h3>
+<div class="p-5">
+    <form class="form" name="registerForm" (ngSubmit) = "ngSubmit()">
+      <input type="text" class="form-control w-50 " placeholder="Nom"  [(ngModel)] = "assurance.nom" name="nom">
+      <input type="text" class="form-control w-50 " placeholder="Type"  [(ngModel)] = "assurance.type" name="type">
+      <input type="text" class="form-control w-50" placeholder="Prix" [(ngModel)] = "assurance.prix" name="prix">
+      <input type="text" class="form-control w-50 " placeholder="Date_Debut"  [(ngModel)] = "assurance.date_debut" name="dateD">
+      <input type="text" class="form-control w-50 " placeholder="Date_Fin"  [(ngModel)] = "assurance.date_fin" name="dateF">
+      <div class="border text-center">
+        <button type="submit" class="btn btn-outline-secondary mt-3">Update</button>
+      </div>
+    </form>
+</div>

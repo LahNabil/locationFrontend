@@ -1,3 +1,6 @@
+import { Agence } from "../agence/agence.model";
+import { Assurance } from "../assurance/assurance.model";
+
 // voiture.model.ts
 export class Voiture {
     id!: number ;
@@ -10,8 +13,9 @@ export class Voiture {
     carburant: string | undefined;
     date: Date | undefined;
     photo: string | undefined;
-    assuranceId: number | undefined; // Assuming Assurance is another model
-    agenceId: number | undefined;
+    assurance: Assurance | undefined; // Assuming Assurance is another model
+    agence: Agence | undefined;
+
 }
     // constructor(matricule: string,
     //   marque: string,

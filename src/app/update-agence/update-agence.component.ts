@@ -12,6 +12,8 @@ export class UpdateAgenceComponent {
   agences : Agence[] = [];
   agence : Agence = new Agence();
   id!: number;
+
+  constructor(private agenceService : AgenceService, private route : ActivatedRoute, private router : Router){}
   
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];
@@ -19,15 +21,14 @@ export class UpdateAgenceComponent {
     this.agence = data;
   });
   }
-  
 
-  constructor(private agenceService : AgenceService, private route : ActivatedRoute, private router : Router){}
   goToAgenceHome(){
     this.router.navigate(['/admin/agence'])
   }
 
   
   ngSubmit(){
+
     this.agenceService.updateAgence(this.id, this.agence).subscribe(data =>{
       this.goToAgenceHome();
     });

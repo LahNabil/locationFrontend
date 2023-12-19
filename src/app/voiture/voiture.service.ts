@@ -27,6 +27,9 @@ deleteVoiture(id:number | undefined) : Observable<Object>{
 updateVoiture(id:number, voiture : Voiture): Observable<Object>{
        return this.httpClient.put(`${this.baseUrl}/edit/${id}`,voiture);
 }
+affecterVoitureAssurance(idV : number | undefined, idA :number | undefined): Observable<Object>{
+  return this.httpClient.post(`${this.baseUrl}/affecterAss/${idV}/${idA}`, {});
+}
 
 
 // getCategoriesList() : Observable<Categorie[]>{

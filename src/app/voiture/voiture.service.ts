@@ -1,33 +1,48 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { Voiture } from './voiture.model';
+import { Assurance } from '../assurance/assurance.model';
+import { Agence } from '../agence/agence.model';
 
 @Injectable({
   providedIn: 'root'
 })
 export class VoitureService {
-  private baseUrl = "http://localhost:8080/voitures";
 
   constructor(private httpClient : HttpClient) { }
 
-addVoiture(voiture: Voiture): Observable<Object>{
-return this.httpClient.post(`${this.baseUrl}/add`, voiture);
-}
-getVoitureById(id : number |undefined): Observable<Voiture>{
-  return this.httpClient.get<Voiture>(`${this.baseUrl}/${id}`)
-  }
+  private baseUrl = "http://localhost:8080/voitures";
+  private baseUrl1 = "http://localhost:8080/assurances";
+  private baseUrl2 = "http://localhost:8080/agences";
 
-getVoitureList() : Observable<Voiture[]>{
+  
+
+  getAssuranceById(id : number |undefined): Observable<Assurance>{
+    return this.httpClient.get<Assurance>(`${this.baseUrl1}/${id}`)
+    }
+  getAgenceById(id : number |undefined): Observable<Agence>{
+      return this.httpClient.get<Agence>(`${this.baseUrl2}/${id}`)
+      }
+  getVoitureById(id : number |undefined): Observable<Voiture>{
+      return this.httpClient.get<Voiture>(`${this.baseUrl}/${id}`)
+      }
+
+  addVoiture(voiture: Voiture): Observable<Object>{
+      return this.httpClient.post(`${this.baseUrl}/add`, voiture);
+      }
+  
+
+  getVoitureList() : Observable<Voiture[]>{
     return this.httpClient.get<Voiture[]>(`${this.baseUrl}`);
 }
-deleteVoiture(id:number | undefined) : Observable<Object>{
+  deleteVoiture(id:number | undefined) : Observable<Object>{
     return this.httpClient.delete(`${this.baseUrl}/delete/${id}`);
     }
-updateVoiture(id:number, voiture : Voiture): Observable<Object>{
+  updateVoiture(id:number, voiture : Voiture): Observable<Object>{
        return this.httpClient.put(`${this.baseUrl}/edit/${id}`,voiture);
 }
-affecterVoitureAssurance(idV : number | undefined, idA :number | undefined): Observable<Object>{
+  affecterVoitureAssurance(idV : number | undefined, idA :number | undefined): Observable<Object>{
   return this.httpClient.post(`${this.baseUrl}/affecterAss/${idV}/${idA}`, {});
 }
 

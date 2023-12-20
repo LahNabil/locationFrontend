@@ -27,7 +27,7 @@ export class VoitureComponent {
   // constructor(private axiosService: AxiosService, private modalService: NgbModal){
 
   // }
-  constructor(private agenceService: AgenceService,private assuranceService: AssuranceService,private voitureService: VoitureService, private router: Router, private modalService: NgbModal){
+  constructor(private assuranceService : AssuranceService, private agenceService: AgenceService,private voitureService: VoitureService, private router: Router, private modalService: NgbModal){
 
   }
   private getVoiture(){
@@ -77,6 +77,7 @@ export class VoitureComponent {
     });
   }
   ngSubmit(){
+    console.log(this.voiture);
     this.addVoiture();
     
   }

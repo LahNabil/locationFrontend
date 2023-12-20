@@ -1,21 +1,71 @@
-p{
-    text-align: center;
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$light-color: #f8f9fa;
+$dark-color: #343a40;
+
+// Styles
+.ms-5 {
+  margin-left: 3rem !important;
 }
-.p-5{
-    border: 1px solid black;
-    width: 85%;
-    margin-left: 15%;
-    
+
+.p-3 {
+  padding: 1rem !important;
 }
-.border{
-    padding: 10px;
+
+.text-center {
+  text-align: center !important;
+}
+
+.p-5 {
+  padding: 3rem !important;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-control {
+  width: 50%;
+  margin-bottom: 1rem;
+}
+
+.form-check-input {
+  margin-right: 0.5rem;
+}
+
+.form-select {
+  width: 50%;
+  margin-top: 1rem;
+}
+
+.lbl {
+  margin-top: 1rem;
+  display: block;
+}
+
+.border {
+  border: 1px solid $dark-color;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.btn {
+  &.btn-outline-secondary {
+    color: $secondary-color;
+    border-color: $secondary-color;
   }
-  .btn{
-    margin-right: 10px;
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .form-control {
+    width: 100%;
   }
-  .fa {
-    margin-right: 10px;
+
+  .form-select {
+    width: 100%;
   }
-  table .btn{
-    margin: 2px;
-  }
+}

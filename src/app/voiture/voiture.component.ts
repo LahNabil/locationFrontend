@@ -78,6 +78,7 @@ export class VoitureComponent {
   }
   ngSubmit(){
     this.addVoiture();
+    
   }
 
   

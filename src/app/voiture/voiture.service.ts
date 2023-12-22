@@ -22,11 +22,11 @@ export class VoitureService {
     return this.httpClient.get<Assurance>(`${this.baseUrl1}/${id}`)
     }
   getAgenceById(id : number |undefined): Observable<Agence>{
-      return this.httpClient.get<Agence>(`${this.baseUrl2}/${id}`)
-      }
+    return this.httpClient.get<Agence>(`${this.baseUrl2}/${id}`)
+    }
   getVoitureById(id : number |undefined): Observable<Voiture>{
-      return this.httpClient.get<Voiture>(`${this.baseUrl}/${id}`)
-      }
+    return this.httpClient.get<Voiture>(`${this.baseUrl}/${id}`)
+    }
 
   addVoiture(voiture: Voiture): Observable<Object>{
       return this.httpClient.post(`${this.baseUrl}/add`, voiture);

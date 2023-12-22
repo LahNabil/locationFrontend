@@ -31,7 +31,7 @@ export class AssuranceComponent {
   updateAssurance(id : number | undefined){
     this.router.navigate(['admin','assurance','update', id]);
       }
-  deleteAssurance(id: number){
+  deleteAssurance(id: number | undefined){
     const isConfirmed = window.confirm("Êtes-vous sûr de vouloir supprimer cette assurance ?");
     if (isConfirmed) {
       this.assuranceService.deleteAssurance(id).subscribe(data => {

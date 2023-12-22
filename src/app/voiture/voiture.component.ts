@@ -46,10 +46,13 @@ export class VoitureComponent {
     })
   }
   deleteVoiture(id : number|undefined){
+    const isConfirmed = window.confirm("Êtes-vous sûr de vouloir supprimer cette assurance ?");
+    if (isConfirmed) {
     this.voitureService.deleteVoiture(id).subscribe(data =>{
       console.log(data);
       window.location.reload();
     });
+  }
   }
   ngOnInit(): void {
     this.getVoiture();
@@ -71,6 +74,7 @@ export class VoitureComponent {
       }
   
   addVoiture(){
+    console.log('Adding voiture:', this.voiture);
     this.voitureService.addVoiture(this.voiture).subscribe(data=>{
       console.log(data);
       window.location.reload();

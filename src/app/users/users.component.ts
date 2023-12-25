@@ -21,5 +21,13 @@ export class UsersComponent {
   ngOnInit(){
     this.getUsers();
   }
+  deleteUser(id: number){
+    const isConfirmed = window.confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?");
+    if (isConfirmed) {
+      this.userService.deleteUser(id).subscribe(data => {
+        window.location.reload();
+      });
+    }
+  }
 
 }

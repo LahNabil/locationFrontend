@@ -15,6 +15,10 @@ import { LoginDto } from './loginDto.model';
       return this.httpClient.get<User[]>(`${this.baseUrl}`);
   }
 
+  deleteUser(id:number | undefined) : Observable<Object>{
+    return this.httpClient.delete(`${this.baseUrl}/delete/${id}`);
+    }
+
     getAuthToken(): string | null {
         return window.localStorage.getItem("auth_token");
       }

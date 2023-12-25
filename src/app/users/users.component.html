@@ -28,6 +28,7 @@
             <td>{{ user.permis }}</td>
             <td>{{ user.telephone }}</td>
             <td>{{ user.ville }}</td>
+            <td><button class="btn btn-outline-danger me-2" (click)= "deleteUser(user.id)">Delete</button></td>
 
             <!-- <td>
                 <button class="btn btn-sm btn-warning" (click)= "updateAssurance(assurance.id)">

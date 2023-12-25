@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from './login.model';
+import { LoginDto } from './loginDto.model';
 
 @Injectable({
     providedIn: 'root'
@@ -29,7 +30,7 @@ import { User } from './login.model';
         //     return this.httpClient.post(`${this.baseUrl}/add`, assurance);
         //     }
 
-    onLogin(user: User): Observable<Object> {
+    onLogin(user: LoginDto): Observable<Object> {
         return this.httpClient.post(`${this.baseUrl}/login`, user);
     }
     onRegister(user: User): Observable<Object>{

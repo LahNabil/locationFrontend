@@ -1,43 +1,64 @@
 <div class="card">
+<div class="borderr">
+  <button class="btn btn-md btn-outline-primary" (click)="open(content)">
+    <i class="fa fa-user"></i>Add new Car
+  </button>
+</div>
+
+<ng-template #content let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">New Car</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form class="form" name="registerForm" (ngSubmit) = "ngSubmit()">
+      <input type="text" class="form-control w-50 " placeholder="Matricule"  [(ngModel)] = "voiture.matricule" name="matricule">
+      <input type="text" class="form-control w-50 " placeholder="Date"  [(ngModel)] = "voiture.date" name="date">
+     
+      <!-- <input id="date" name="date" class="form-control" ngbDatepicker #dp="ngbDatepicker">
+       <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
+        <i class="fa fa-calendar"></i>
+      </button> -->
+      <input type="checkbox" class="form-check-input" id="dispo" [(ngModel)]= "voiture.dispo" name="dispo">
+      <label class="form-check-label" for="dispo">Disponible</label>
+      <input type="text" class="form-control w-50 " placeholder="carburant"  [(ngModel)] = "voiture.carburant" name="carburant">
+      <input type="text" class="form-control w-50 " placeholder="Couleur"  [(ngModel)] = "voiture.couleur" name="couleur">
+      <input type="text" class="form-control w-50 " placeholder="Marque"  [(ngModel)] = "voiture.marque" name="marque">
+      <input type="text" class="form-control w-50 " placeholder="Modele"  [(ngModel)] = "voiture.modele" name="modele">
+      <input type="number" class="form-control w-50 " placeholder="Prix"  [(ngModel)] = "voiture.prix" name="prix">
+      <input type="text" class="form-control w-50 " placeholder="Photo"  [(ngModel)] = "voiture.photo" name="photo">
+      
+      <label for="assurance" class="lbl">Assurance</label>
+      <select class="form-select w-50 mt-3" [(ngModel)]= "voiture.assurance" name="assurance">
+        <option value="" disabled>Sélectionnez une assurance</option>
+        <option *ngFor="let assurance of assurances" [value]= "assurance" >{{ assurance.id }} - {{assurance.nom}}</option>
+      </select>
+
+      <label for="assurance" class="lbl">Agence</label>
+      <select class="form-select w-50 mt-3" [(ngModel)]= "voiture.agence" name="agence">
+        <option value="" disabled>Sélectionnez une agence </option>
+        <option *ngFor="let agence of agences" [value]= "agence"> {{ agence.id }} - {{agence.nom}}</option>
+      </select>
+      <div class="border text-center">
+        <button type="submit" class="btn btn-outline-success mt-3">Add</button>
+        </div>
+    </form>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+  </div>
+</ng-template>
+
     <div class="card-body">
       <h5 class="card-title">Backend response</h5>
-      <div class="border">
+      <!-- <div class="border">
         <h3> Ajouter Voiture</h3>
       <div class="modal-body">
-        <form class="form" name="registerForm" (ngSubmit) = "ngSubmit()">
-          <input type="text" class="form-control w-50 " placeholder="Matricule"  [(ngModel)] = "voiture.matricule" name="matricule">
-          <input type="text" class="form-control w-50 " placeholder="Date"  [(ngModel)] = "voiture.date" name="date">
-         
-          <!-- <input id="date" name="date" class="form-control" ngbDatepicker #dp="ngbDatepicker">
-           <button class="btn btn-outline-secondary" (click)="dp.toggle()" type="button">
-            <i class="fa fa-calendar"></i>
-          </button> -->
-          <input type="checkbox" class="form-check-input" id="dispo" [(ngModel)]= "voiture.dispo" name="dispo">
-          <label class="form-check-label" for="dispo">Disponible</label>
-          <input type="text" class="form-control w-50 " placeholder="carburant"  [(ngModel)] = "voiture.carburant" name="carburant">
-          <input type="text" class="form-control w-50 " placeholder="Couleur"  [(ngModel)] = "voiture.couleur" name="couleur">
-          <input type="text" class="form-control w-50 " placeholder="Marque"  [(ngModel)] = "voiture.marque" name="marque">
-          <input type="text" class="form-control w-50 " placeholder="Modele"  [(ngModel)] = "voiture.modele" name="modele">
-          <input type="number" class="form-control w-50 " placeholder="Prix"  [(ngModel)] = "voiture.prix" name="prix">
-          <input type="text" class="form-control w-50 " placeholder="Photo"  [(ngModel)] = "voiture.photo" name="photo">
-          
-          <label for="assurance" class="lbl">Assurance</label>
-          <select class="form-select w-50 mt-3" [(ngModel)]= "voiture.assurance" name="assurance">
-            <option value="" disabled>Sélectionnez une assurance</option>
-            <option *ngFor="let assurance of assurances" [value]= "assurance" >{{ assurance.id }} - {{assurance.nom}}</option>
-          </select>
-
-          <label for="assurance" class="lbl">Agence</label>
-          <select class="form-select w-50 mt-3" [(ngModel)]= "voiture.agence" name="agence">
-            <option value="" disabled>Sélectionnez une agence </option>
-            <option *ngFor="let agence of agences" [value]= "agence"> {{ agence.id }} - {{agence.nom}}</option>
-          </select>
-          <div class="border text-center">
-            <button type="submit" class="btn btn-outline-success mt-3">Add</button>
-            </div>
-        </form>
+        
         </div>
-      </div>
+      </div> -->
       <p class="card-text">Voitures:</p>
       <table class="table table-bordered">
         <thead>
@@ -149,4 +170,5 @@
       
     
   </div>
+
   

@@ -1,0 +1,41 @@
+<div class="card">
+<p class="card-text">Clients:</p>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>login</th>
+            <th>cin</th>
+            <th>email</th>
+            <th>genre</th>
+            <th>permis</th>
+            <th>telephone</th>
+            <th>ville</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.lastName }}</td> <!-- Use Angular date pipe for formatting -->
+            <td>{{ user.login }}</td>
+            <td>{{ user.cin }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.genre }}</td>
+            <td>{{ user.permis }}</td>
+            <td>{{ user.telephone }}</td>
+            <td>{{ user.ville }}</td>
+
+            <!-- <td>
+                <button class="btn btn-sm btn-warning" (click)= "updateAssurance(assurance.id)">
+                  <i class="fa fa-edit"></i>Edit</button>
+                  <button class="btn btn-outline-danger me-2" (click)= "deleteAssurance(assurance.id)">Delete</button>
+                  
+              </td> -->
+          </tr>
+        </tbody>
+      </table>
+    </div>

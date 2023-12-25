@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { AuthComponent } from './auth/auth.component';
 import { WelcomeContentComponent } from './welcome-content/welcome-content.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { ContentComponent } from './content/content.component';
@@ -21,13 +20,13 @@ import { UpdateVoitureComponent } from './update-voiture/update-voiture.componen
 import { UpdateAssuranceComponent } from './update-assurance/update-assurance.component';
 import { AgenceComponent } from './agence/agence.component';
 import { UpdateAgenceComponent } from './update-agence/update-agence.component';
+import { UsersComponent } from './users/users.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    AuthComponent,
     WelcomeContentComponent,
     LoginFormComponent,
     ContentComponent,
@@ -41,7 +40,8 @@ import { UpdateAgenceComponent } from './update-agence/update-agence.component';
     UpdateVoitureComponent,
     UpdateAssuranceComponent,
     AgenceComponent,
-    UpdateAgenceComponent
+    UpdateAgenceComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

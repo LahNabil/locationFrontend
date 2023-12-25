@@ -1,5 +1,5 @@
 export class Assurance {
-    id !: number | undefined;
+    id : number | undefined;
     nom: string | undefined;
     type: string | undefined;
     prix: number | undefined;

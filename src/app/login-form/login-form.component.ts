@@ -1,4 +1,7 @@
-import { EventEmitter, Component, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { UserService } from './login.service';
+import { Router } from '@angular/router';
+import { User } from './login.model';
 
 @Component({
   selector: 'app-login-form',
@@ -7,31 +10,32 @@ import { EventEmitter, Component, Output } from '@angular/core';
   })
 export class LoginFormComponent {
 
-  @Output() onSubmitLoginEvent = new EventEmitter();
-  @Output() onSubmitRegisterEvent = new EventEmitter();
+  constructor(private userService: UserService, private router: Router){}
 
-	active: string = "login";
-  firstName: string = "";
-  lastName: string = "";
-  login: string = "";
-  password: string = "";
-  role: number = 1; 
+	user : User = new User();
 
 	onLoginTab(): void {
 		this.active = "login";
 	}
+  active: string = "login";
 
 	onRegisterTab(): void {
 		this.active = "register";
 	}
 
-  onSubmitLogin(): void {
-    this.onSubmitLoginEvent.emit({"login": this.login, "password": this.password});
-    alert("Connexion réussie!");
+   onSubmitLogin(){
+    //  this.userService.onLogin(this.user).subscribe((res:any)=>{
+    //   console.log(res)
+    //   localStorage.setItem('token',res.token);
+    //  });
+    //  alert("Connexion réussie!");
   }
 
-  onSubmitRegister(): void {
-    this.onSubmitRegisterEvent.emit({"firstName": this.firstName, "lastName": this.lastName, "login": this.login, "password": this.password, "role": this.role});
+   onSubmitRegister(): void {
+    this.userService.onRegister(this.user).subscribe((res)=>{
+      console.log(res)
+      // localStorage.setItem('token', res.token);
+    })
   }
 
 }

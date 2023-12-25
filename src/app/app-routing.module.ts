@@ -10,6 +10,7 @@ import { AssuranceComponent } from './assurance/assurance.component';
 import { UpdateAssuranceComponent } from './update-assurance/update-assurance.component';
 import { AgenceComponent } from './agence/agence.component';
 import { UpdateAgenceComponent } from './update-agence/update-agence.component';
+import { UsersComponent } from './users/users.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
@@ -23,7 +24,8 @@ const routes: Routes = [
     { path: 'voiture/update/:id', component: UpdateVoitureComponent},
     { path: 'assurance/update/:id', component: UpdateAssuranceComponent},
     { path: 'agence', component: AgenceComponent },
-    { path: 'agence/update/:id', component: UpdateAgenceComponent}
+    { path: 'agence/update/:id', component: UpdateAgenceComponent},
+    { path: 'users', component: UsersComponent}
    ]
   }
   

@@ -7,11 +7,9 @@ import { AxiosService } from '../axios.service';
   styleUrls: ['./content.component.scss']
 })
 export class ContentComponent {
-	componentToShow: string = "welcome";
+	componentToShow: string = "";
 
 	constructor(private axiosService: AxiosService) { }
-
-  
 
 	showComponent(componentToShow: string): void {
     this.componentToShow = componentToShow;

@@ -1,19 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Voiture } from '../voiture/voiture.model';
 import { VoitureService } from '../voiture/voiture.service';
-import { Router } from '@angular/router';
+
+import SwiperCore, { Navigation, Pagination} from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([Navigation, Pagination]);
+
+
+
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+  styleUrl: './home.component.scss',
+  encapsulation: ViewEncapsulation.None
 })
 export class HomeComponent {
 
   car : Voiture = new Voiture();
   cars : Voiture[] = [];
 
-  constructor(private voitureService: VoitureService, private router: Router){}
+  constructor(private voitureService: VoitureService){}
+
+ 
   
   getVoiture(){
     this.voitureService.getVoitureList().subscribe(data =>{

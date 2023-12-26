@@ -21,6 +21,9 @@ import { UpdateAssuranceComponent } from './update-assurance/update-assurance.co
 import { AgenceComponent } from './agence/agence.component';
 import { UpdateAgenceComponent } from './update-agence/update-agence.component';
 import { UsersComponent } from './users/users.component';
+import { SwiperModule } from 'swiper/angular';
+
+
 
 
 @NgModule({
@@ -41,14 +44,16 @@ import { UsersComponent } from './users/users.component';
     UpdateAssuranceComponent,
     AgenceComponent,
     UpdateAgenceComponent,
-    UsersComponent
+    UsersComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
+    HttpClientModule,
+    SwiperModule
   ],
   providers: [],
   bootstrap: [AppComponent]

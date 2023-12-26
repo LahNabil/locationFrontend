@@ -5,19 +5,35 @@
       <a routerLink="/cars" class="btn">View Cars</a>
     </div>
   </section>
-  <section class="car-list">
-    <div class="car-card" *ngFor="let car of cars">
-      <img [src]="car.photo" alt="{{ car.marque }} Image">
-      <h2>{{ car.marque }}</h2>
-      <p>{{ car.modele }}</p>
-      <span class="price">{{ car.prix }}/day</span>
-      <button >View Details</button>
-    </div>
-  </section>
-  
-  
-        <div class="hero-right">
-            <div class="image-container">
-                <img src="../../assets/VoitureWallpaperr.png" alt="photo-batterie"/>
-            </div>
+  <swiper
+  [slidesPerView]="3"
+  [spaceBetween]="50"
+  [navigation]="true"
+  [pagination]="{ clickable: true }"
+  [autoplay]="{ delay: 3000, disableOnInteraction: false }"
+>
+  <ng-template swiperSlide *ngFor="let car of cars">
+    <section class="car-list">
+      <div class="swiper-slide">
+        <div class="car-card">
+          <img [src]="car.photo"  class="phot" alt="{{ car.marque }} Image">
+          <h2>{{ car.marque }}</h2>
+          <p>{{ car.modele }}</p>
+          <div class="oo">
+            <span class="price">{{ car.prix }}/day</span>
+          <button>View Details</button>
+
+          </div>
+          
         </div>
+      </div>
+    </section>
+  </ng-template>
+  
+</swiper>
+  
+<div class="hero-right">
+  <div class="image-container">
+    <img src="../../assets/VoitureWallpaperr.png" alt="photo-batterie"/>
+  /div>
+</div>

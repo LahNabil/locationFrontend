@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { LocationService } from './location.service';
-import { Router } from '@angular/router';
 import { Location } from './location.model'; 
 
 @Component({
@@ -12,7 +11,7 @@ export class LocationComponent {
 
   location: Location = new Location();
   locations: Location[] = [];
-  constructor(private locationService: LocationService, private router: Router){}
+  constructor(private locationService: LocationService){}
   
   getLocation(){
     this.locationService.getLocationList().subscribe(data =>{

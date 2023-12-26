@@ -1,1 +1,38 @@
-<p>location works!</p>
+<div class="card">
+    <p class="card-text">Location:</p>
+          <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Date Debut</th>
+                <th>Date fin</th>
+                <th>Montant</th>
+                <th>Id Voiture</th>
+                <th>Matricule Voiture</th>
+                <th>User</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let location of locations">
+                <td>{{ location.id }}</td>
+                <td>{{ location.date_debut }}</td>
+                <td>{{ location.date_fin }}</td> <!-- Use Angular date pipe for formatting -->
+                <td>{{ location.montant }}</td>
+                <td>{{ location.voiture?.id }}</td>
+                <td>{{ location.voiture?.matricule}}</td>
+                <td>{{ location.user?.login }}</td>
+                <td><button class="btn btn-outline-danger me-2">Delete</button></td>
+                <!-- (click)= "deleteLocation(location.id) -->
+    
+                <!-- <td>
+                    <button class="btn btn-sm btn-warning" (click)= "updateAssurance(assurance.id)">
+                      <i class="fa fa-edit"></i>Edit</button>
+                      <button class="btn btn-outline-danger me-2" (click)= "deleteAssurance(assurance.id)">Delete</button>
+                      
+                  </td> -->
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    

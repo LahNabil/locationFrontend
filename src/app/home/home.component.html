@@ -1,83 +1,23 @@
-<div class="carousel-inner">
-    <div class="carousel-item active">
-        <img class="w-100" src="../../assets/carWallpaper1.jpg" alt="Image">
-        <div class="carousel-caption d-flex align-items-center">
-            <div class="container">
-                <div class="row align-items-center justify-content-center justify-content-lg-start">
-                    <div class="col-10 col-lg-7 text-center text-lg-start">
-                        <h6 class="text-white text-uppercase mb-3 animated slideInDown">// Car Servicing //</h6>
-                        <h1 class="display-3 text-white mb-4 pb-3 animated slideInDown">Qualified Car Repair Service Center</h1>
-                        <a href="" class="btn btn-primary py-3 px-5 animated slideInDown">Learn More<i class="fa fa-arrow-right ms-3"></i></a>
-                    </div>
-                    <div class="col-lg-5  col-md-6 header-right">
-                        <h4 class="text-white pb-30">Book Your Car Today!</h4>
-                        <form class="form" role="form" autocomplete="off">
-                        <div class="form-group">
-                        <div class="default-select" id="default-select">
-                        <select style="display: none;">
-                        <option value="" disabled="" selected="" hidden="">Select Your Car</option>
-                        <option value="1">BMW</option>
-                        <option value="1">Farrari</option>
-                        <option value="1">Toyota</option>
-                        </select><div class="nice-select" tabindex="0"><span class="current">Select Your Car</span><ul class="list"><li data-value="" class="option selected disabled">Select Your Car</li><li data-value="1" class="option">BMW</li><li data-value="1" class="option">Farrari</li><li data-value="1" class="option">Toyota</li></ul></div>
-                        </div>
-                        </div>
-                        <div class="form-group row">
-                        <div class="col-md-6 wrap-left">
-                        <div class="default-select" id="default-select">
-                        <select style="display: none;">
-                        <option value="" disabled="" selected="" hidden="">Pickup</option>
-                        <option value="1">Pickup One</option>
-                        <option value="1">Pickup Two</option>
-                        <option value="1">Pickup Three</option>
-                        <option value="1">Pickup Four</option>
-                        </select><div class="nice-select" tabindex="0"><span class="current">Pickup</span><ul class="list"><li data-value="" class="option selected disabled">Pickup</li><li data-value="1" class="option">Pickup One</li><li data-value="1" class="option">Pickup Two</li><li data-value="1" class="option">Pickup Three</li><li data-value="1" class="option">Pickup Four</li></ul></div>
-                        </div>
-                        </div>
-                        <div class="col-md-6 wrap-right">
-                        <div class="input-group dates-wrap">
-                        <input id="datepicker" class="dates form-control hasDatepicker" placeholder="Date &amp; time" type="text">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        <div class="form-group row">
-                        <div class="col-md-6 wrap-left">
-                        <div class="default-select" id="default-select">
-                        <select style="display: none;">
-                        <option value="" disabled="" selected="" hidden="">Drop off</option>
-                        <option value="1">Drop off One</option>
-                        <option value="1">Drop off Two</option>
-                        <option value="1">Drop off Three</option>
-                        <option value="1">Drop off Four</option>
-                        </select><div class="nice-select" tabindex="0"><span class="current">Drop off</span><ul class="list"><li data-value="" class="option selected disabled">Drop off</li><li data-value="1" class="option">Drop off One</li><li data-value="1" class="option">Drop off Two</li><li data-value="1" class="option">Drop off Three</li><li data-value="1" class="option">Drop off Four</li></ul></div>
-                        </div>
-                        </div>
-                        <div class="col-md-6 wrap-right">
-                        <div class="input-group dates-wrap">
-                        <input id="datepicker2" class="dates form-control hasDatepicker" placeholder="Date &amp; time" type="text">
-                        <div class="input-group-prepend">
-                        <span class="input-group-text"><span class="lnr lnr-calendar-full"></span></span>
-                        </div>
-                        </div>
-                        </div>
-                        </div>
-                        <div class="from-group">
-                        <input class="form-control txt-field" type="text" name="name" placeholder="Your name">
-                        <input class="form-control txt-field" type="email" name="email" placeholder="Email address">
-                        <input class="form-control txt-field" type="tel" name="phone" placeholder="Phone number">
-                        </div>
-                        <div class="form-group row">
-                        <div class="col-md-12">
-                        <button type="reset" class="btn btn-default btn-lg btn-block text-center text-uppercase">Confirm Car Booking</button>
-                        </div>
-                        </div>
-                        </form>
-                        </div>
-                </div>
+<section class="hero">
+    <div class="hero-content">
+      <h1>Welcome to Car Deal</h1>
+      <p>Explore the world with our top-notch rental cars</p>
+      <a routerLink="/cars" class="btn">View Cars</a>
+    </div>
+  </section>
+  <section class="car-list">
+    <div class="car-card" *ngFor="let car of cars">
+      <img [src]="car.photo" alt="{{ car.marque }} Image">
+      <h2>{{ car.marque }}</h2>
+      <p>{{ car.modele }}</p>
+      <span class="price">{{ car.prix }}/day</span>
+      <button >View Details</button>
+    </div>
+  </section>
+  
+  
+        <div class="hero-right">
+            <div class="image-container">
+                <img src="../../assets/VoitureWallpaperr.png" alt="photo-batterie"/>
             </div>
         </div>
-    </div>
-</div>

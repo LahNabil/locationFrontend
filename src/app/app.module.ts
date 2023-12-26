@@ -22,6 +22,7 @@ import { AgenceComponent } from './agence/agence.component';
 import { UpdateAgenceComponent } from './update-agence/update-agence.component';
 import { UsersComponent } from './users/users.component';
 import { SwiperModule } from 'swiper/angular';
+import { MatIconModule} from '@angular/material/icon';
 
 
 
@@ -53,7 +54,8 @@ import { SwiperModule } from 'swiper/angular';
     FormsModule,
     NgbModule,
     HttpClientModule,
-    SwiperModule
+    SwiperModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

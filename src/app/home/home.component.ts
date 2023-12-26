@@ -2,6 +2,7 @@ import { Component, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Voiture } from '../voiture/voiture.model';
 import { VoitureService } from '../voiture/voiture.service';
 
+
 import SwiperCore, { Navigation, Pagination} from 'swiper';
 
 // install Swiper modules

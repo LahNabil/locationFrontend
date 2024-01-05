@@ -1,0 +1,19 @@
+<!-- cars.component.html -->
+<div class="primaryText"> Decouvrez nos Voitures</div>
+<div class="cars-container">
+    <div class="car-card" *ngFor="let car of cars">
+      <img [src]="car.photo" alt="{{ car.marque }} Image">
+      <div class="car-details">
+        <h3>{{ car.modele }}</h3>
+        <p>{{ car.marque }}</p>
+        <p>{{ car.date | date:'dd/MM/yyyy' }}</p>
+        <p>{{ car.carburant }}</p>
+        <p>Price: ${{ car.prix }}</p>
+        <p>{{ car.couleur }}</p>
+        <td>{{ car.dispo ? 'Disponible' : 'Non disponible' }}</td>
+        <p>{{ car.agence.ville }}</p>
+        
+      </div>
+    </div>
+  </div>
+  

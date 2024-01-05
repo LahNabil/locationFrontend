@@ -13,17 +13,12 @@ export class VoitureService {
   constructor(private httpClient : HttpClient) { }
 
   private baseUrl = "http://localhost:8080/voitures";
-  private baseUrl1 = "http://localhost:8080/assurances";
-  private baseUrl2 = "http://localhost:8080/agences";
+  
 
   
 
-  getAssuranceById(id : number |undefined): Observable<Assurance>{
-    return this.httpClient.get<Assurance>(`${this.baseUrl1}/${id}`)
-    }
-  getAgenceById(id : number |undefined): Observable<Agence>{
-    return this.httpClient.get<Agence>(`${this.baseUrl2}/${id}`)
-    }
+  
+    
   getVoitureById(id : number |undefined): Observable<Voiture>{
     return this.httpClient.get<Voiture>(`${this.baseUrl}/${id}`)
     }
@@ -31,6 +26,23 @@ export class VoitureService {
   addVoiture(voiture: Voiture): Observable<Object>{
       return this.httpClient.post(`${this.baseUrl}/add`, voiture);
       }
+  createVoiture(vmatricule: string,
+     vmarque: string,
+     vprix: number,
+     vdispo: boolean,
+     vcouleur: string,
+     vcarburant: string,
+     vdate: Date,
+     vphoto: string,
+     vassuranceId: any,
+     vagenceId: any
+      ): Observable<Object> {
+        const body = { matricule: vmatricule, marque: vmarque, prix: vprix, dispo: vdispo,
+        couleur: vcouleur, carburant: vcarburant, date: vdate, photo: vphoto, assuranceId:vassuranceId,
+        agenceId:  vagenceId 
+        };
+        return this.httpClient.post(`${this.baseUrl}/add`, body);
+      }    
   
 
   getVoitureList() : Observable<Voiture[]>{

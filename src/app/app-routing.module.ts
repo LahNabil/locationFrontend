@@ -11,10 +11,16 @@ import { UpdateAssuranceComponent } from './update-assurance/update-assurance.co
 import { AgenceComponent } from './agence/agence.component';
 import { UpdateAgenceComponent } from './update-agence/update-agence.component';
 import { UsersComponent } from './users/users.component';
+import { CarsComponent } from './cars/cars.component';
+import { CarDetailsComponent } from './car-details/car-details.component';
+import { AboutComponent } from './about/about.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
   { path: '', component: HomeComponent},
+  { path: 'cars', component: CarsComponent},
+  { path: 'car_details/:id', component: CarDetailsComponent},
+  { path: 'about', component: AboutComponent},
   { path: 'admin',
    component: AdminComponent,
    children: [
@@ -26,6 +32,7 @@ const routes: Routes = [
     { path: 'agence', component: AgenceComponent },
     { path: 'agence/update/:id', component: UpdateAgenceComponent},
     { path: 'users', component: UsersComponent}
+    
    ]
   }
   

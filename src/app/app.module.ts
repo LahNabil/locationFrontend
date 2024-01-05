@@ -23,6 +23,12 @@ import { UpdateAgenceComponent } from './update-agence/update-agence.component';
 import { UsersComponent } from './users/users.component';
 import { SwiperModule } from 'swiper/angular';
 import { MatIconModule} from '@angular/material/icon';
+import { FooterComponent } from './footer/footer.component';
+import { CarsComponent } from './cars/cars.component';
+import { CarDetailsComponent } from './car-details/car-details.component';
+import { AboutComponent } from './about/about.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 
@@ -46,6 +52,10 @@ import { MatIconModule} from '@angular/material/icon';
     AgenceComponent,
     UpdateAgenceComponent,
     UsersComponent,
+    FooterComponent,
+    CarsComponent,
+    CarDetailsComponent,
+    AboutComponent,
     
   ],
   imports: [
@@ -55,7 +65,8 @@ import { MatIconModule} from '@angular/material/icon';
     NgbModule,
     HttpClientModule,
     SwiperModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

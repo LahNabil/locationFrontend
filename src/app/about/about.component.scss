@@ -1,0 +1,42 @@
+.container{
+    margin: 2%;
+}
+.orangeText {
+    color: orange;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 3%;
+  }
+.primaryText {
+    color: #1f3e72;
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 2%;
+  }
+.secondaryText {
+    color: rgb(140 139 139);
+    font-size: 1rem;
+  }
+.text{
+    
+    width: 50%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.image-container{
+    width: 25rem;
+    height: 35rem;
+    overflow: hidden;
+    border-radius: 15rem 15rem 0 0;
+    border: 8px solid rgba(255,255,255,0.12);
+  }
+  .image-container>img{
+    width: 100%;
+    height: 100%;
+  
+  }
+  .c-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }

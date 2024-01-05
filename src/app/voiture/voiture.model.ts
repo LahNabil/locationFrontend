@@ -13,8 +13,8 @@ export class Voiture {
     carburant: string | undefined;
     date: Date | undefined;
     photo: string | undefined;
-    assurance: Assurance | undefined; // Assuming Assurance is another model
-    agence: Agence | undefined;
+    assurance!: Assurance; // Assuming Assurance is another model
+    agence!: Agence ;
 
 }
     // constructor(matricule: string,

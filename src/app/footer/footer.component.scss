@@ -1,0 +1,82 @@
+/* footer.component.scss */
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .footer-section {
+    flex: 1 1 300px;
+    margin-bottom: 30px;
+  
+    h4 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: #ffcc00;
+    }
+  
+    p {
+      margin: 0;
+      color: #ccc;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+  
+      li {
+        margin-bottom: 8px;
+  
+        a {
+          text-decoration: none;
+          color: #ccc;
+          transition: color 0.3s;
+  
+          &:hover {
+            color: #ffcc00;
+          }
+        }
+      }
+    }
+  
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+  
+      a {
+        text-decoration: none;
+        color: #ccc;
+        font-size: 1.5rem;
+        transition: color 0.3s;
+  
+        &:hover {
+          color: #ffcc00;
+        }
+      }
+    }
+  }
+  img {
+    width: 40px; /* Adjust the width to your preference */
+    height: 50px; /* Adjust the height to your preference */
+    border-radius: 50%; /* Optional: Add border-radius for rounded images */
+    transition: transform 0.3s;
+    
+
+    &:hover {
+      transform: scale(1.1); /* Optional: Add a hover effect */
+    }
+  }
+  

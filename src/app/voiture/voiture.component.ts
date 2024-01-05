@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { AxiosService } from '../axios.service';
 import { Voiture } from './voiture.model';
 import { VoitureService } from './voiture.service'
@@ -9,6 +9,10 @@ import { Assurance } from '../assurance/assurance.model';
 import { AssuranceService } from '../assurance/assurance.service';
 import { Agence } from '../agence/agence.model';
 import { AgenceService } from '../agence/agence.service';
+import { FormBuilder, FormGroup, Validators  } from '@angular/forms';
+
+
+
 
 @Component({
   selector: 'app-voiture',
@@ -21,6 +25,23 @@ export class VoitureComponent {
   voiture : Voiture = new Voiture();
   assurances: Assurance[] = [];
   agences: Agence[] = [];
+  form !: FormGroup
+  formBuilder : FormBuilder = inject(FormBuilder);
+
+
+  // selectedAssuranceId : any;
+  // selectedAgenceId : any;
+  // matricule: string = '' ;
+  // date: any ;
+  // dispo: boolean = true;
+  // carburant : string = '';
+  // couleur : string = '';
+  // marque: string = '';
+  // modele: string = '';
+  // prix: number = 0;
+  // photo: string = '';
+
+
   
   closeResult!: string;
   
@@ -58,6 +79,21 @@ export class VoitureComponent {
     this.getVoiture();
     this.getAssurance();
     this.getAgence();
+    this.form = this.formBuilder.group({
+      matricule : [''],
+      date : [''],
+      dispo : [''],
+      carburant : [''],
+      couleur : [''],
+      marque: [''],
+      modele: [''],
+      prix: [''],
+      photo: [''],
+      assurance: [''],
+      agence: ['']
+        
+
+    });
     
   }
   // ngOnInit(): void{
@@ -73,18 +109,64 @@ export class VoitureComponent {
     this.router.navigate(['admin','voiture','update', id]);
       }
   
-  addVoiture(){
-    console.log('Adding voiture:', this.voiture);
-    this.voitureService.addVoiture(this.voiture).subscribe(data=>{
-      console.log(data);
-      window.location.reload();
-    });
+    createVoiture(){
+  //   if( this.form.valid){
+      
+  //     let v : Voiture = {
+  //       ass: this.assurances.filter(a => a.id == this.form.value["assurance"])[0],
+  //       date: new Date(this.from.value['dateDebut']),
+  //       date_fin: new Date(this.from.value["dateFin"]),
+  //       salle: this.from.value["salle"],
+  //       med: this.doctors.filter(d => d.nom === this.from.value["doctor"])[0]
+  //     }
+  //     console.log(requestBody)
+  //     this.voitureService.addVoiture(requestBody).subscribe((response)=>{
+  //       console.log(response);
+  //     })
+  //   }
   }
-  ngSubmit(){
-    console.log(this.voiture);
-    this.addVoiture();
+
+    // console.log('Adding voiture:', this.matricule, this.marque, this.prix, this.dispo,
+    // this.couleur,this.carburant,this.date,this.photo,this.selectedAssuranceId,this.selectedAgenceId
+    // );
+    // console.log(this.selectedAgenceId);
     
+    // this.voiture.agence = this.agences.filter(a => a.id === this.selectedAgenceId)[0];
+    // this.voiture.assurance = this.assurances.filter(a => a.id === this.selectedAssuranceId)[0];
+    // this.voitureService.addVoiture(this.voiture).subscribe(data=>{
+    //   console.log(data);
+    //   window.location.reload();
+    // });
+    // this.voitureService.createVoiture(this.matricule, this.marque, this.prix, this.dispo,
+    //   this.couleur,this.carburant,this.date,this.photo,this.selectedAssuranceId,this.selectedAgenceId
+    //   ).subscribe(data=>{
+    //     console.log(data);
+    //     this.voitureService.getVoitureList().subscribe((data)=>{
+    //       this.voitures = data;
+    //     })
+        // window.location.reload();
+      // })
+  
+
+
+  // onAgenceChanged(event : any){
+  //   this.selectedAgenceId = parseInt(event)
+  // }
+
+
+  // onAssuranceChanged(event : any){
+  //     this.selectedAssuranceId =parseInt(event);
   }
+  // ngSubmit(){
+  //   this.addVoiture();
+  // }
+    
+  //s}
+  // onSubmit(){
+  //   console.log(this.form.value);
+  //   this.addVoiture()
+  // }
+//}
 
   
 
@@ -93,24 +175,24 @@ export class VoitureComponent {
 
 
   
-open(content: any) {
-  this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
-    this.closeResult = `Closed with: ${result}`;
-  }, (reason) => {
-    this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
-  });
-}
+// open(content: any) {
+//   this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+//     this.closeResult = `Closed with: ${result}`;
+//   }, (reason) => {
+//     this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
+//   });
+// }
 
-private getDismissReason(reason: any): string {
-  if (reason === ModalDismissReasons.ESC) {
-    return 'by pressing ESC';
-  } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
-    return 'by clicking on a backdrop';
-  } else {
-    return `with: ${reason}`;
-  }
-}
-}
+// private getDismissReason(reason: any): string {
+//   if (reason === ModalDismissReasons.ESC) {
+//     return 'by pressing ESC';
+//   } else if (reason === ModalDismissReasons.BACKDROP_CLICK) {
+//     return 'by clicking on a backdrop';
+//   } else {
+//     return `with: ${reason}`;
+//   }
+// }
+// }
 
 
 

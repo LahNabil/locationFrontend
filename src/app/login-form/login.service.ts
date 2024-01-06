@@ -14,6 +14,9 @@ import { LoginDto } from './loginDto.model';
     getUserList() : Observable<User[]>{
       return this.httpClient.get<User[]>(`${this.baseUrl}`);
   }
+  getLastName(): Observable<any> {
+    return this.httpClient.get(`${this.baseUrl}/username`, { responseType: 'text' });
+  }
 
   deleteUser(id:number | undefined) : Observable<Object>{
     return this.httpClient.delete(`${this.baseUrl}/delete/${id}`);

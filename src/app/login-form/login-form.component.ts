@@ -29,7 +29,13 @@ export class LoginFormComponent {
        this.userService.onLogin(this.loginDto).subscribe((res:any)=>{
        console.log(res)
        localStorage.setItem('token',res.token);
+       
      });
+     
+     this.router.navigate(['/']).then(()=>{
+      window.location.reload();
+     })
+     
     //  alert("Connexion réussie!");
   }
 

@@ -1,4 +1,9 @@
 import { Component, Input } from '@angular/core';
+import { UserSessionService } from '../login-form/loginSession.service';
+import { Router } from '@angular/router';
+import { UserSession } from '../login-form/loginSession.model';
+import { UserService } from '../login-form/login.service';
+import { User } from '../login-form/login.model';
 
 @Component({
   selector: 'app-header',
@@ -8,5 +13,34 @@ import { Component, Input } from '@angular/core';
 export class HeaderComponent {
   @Input() pageTitle!: string;
   @Input() logoSrc!: string;
+
+  constructor(private userService: UserService,private userSessionService: UserSessionService, private router: Router){}
+
+	userSession : UserSession | undefined;
+  userSessions: UserSession[] = [];
+
+  lastName: String= '';
+
+  user : User | undefined;
+
+  getLastName(){
+    this.userService.getLastName().subscribe(data =>{
+      this.lastName = data;
+      console.log(this.lastName);
+    })
+  }
+
+  
+
+  getUserService(){
+    this.userSessionService.getUserSession().subscribe(data =>{
+    this.userSessions = data;
+    })
+  }
+
+  ngOnInit(){
+    this.getUserService();
+    this.getLastName();
+  }
 
 }

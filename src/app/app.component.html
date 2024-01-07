@@ -1,5 +1,12 @@
+
 <div class="app">
-  <app-header [pageTitle]="'Frontend Authentication'"/>
+  <ng-container *ngIf="!isInAdminRoute">
+    <app-header [pageTitle]="'Frontend Authentication'"></app-header>
+  </ng-container>
+
   <router-outlet></router-outlet>
-  <app-footer></app-footer>
+
+  <ng-container *ngIf="!isInAdminRoute">
+    <app-footer></app-footer>
+  </ng-container>
 </div>

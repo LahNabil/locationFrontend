@@ -1,1 +1,30 @@
-<p>car-details works!</p>
+<!-- <section className="section product" aria-label="product">
+    <div className="container">
+      <div className="product-slides">
+        <div className="slider-banner" data-slider="">
+          <div className="product-banner" *ngFor="let voiture of voitures">
+              <img
+                src={battery.image}
+                width={600}
+                height={600}
+                loading="lazy"
+                alt={`Batterie ${battery.marque}`}
+                className="img-cover"
+              />
+             -->
+             <!-- car-details.component.html -->
+
+<div class="car-details-container">
+    <h2>{{ voiture.matricule }} - {{ voiture.date }}</h2>
+    <img src="{{ voiture.photo }}" alt="{{ voiture.marque }} Image">
+  
+    <div class="car-details-info">
+      <p><strong>Brand:</strong> {{ voiture.modele }}</p>
+      <p><strong>Color:</strong> {{ voiture.couleur }}</p>
+      <p><strong>Price:</strong> {{ voiture.prix | currency:'USD':'symbol' }}</p>
+      <p><strong>Description:</strong> {{ voiture.marque }}</p>
+    </div>
+  
+    <button (click)="goToVoitureHome()">Go Back to Car List</button>
+  </div>
+  

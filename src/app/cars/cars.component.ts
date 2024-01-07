@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Voiture } from '../voiture/voiture.model';
 import { VoitureService } from '../voiture/voiture.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cars',
@@ -12,7 +13,11 @@ export class CarsComponent {
   car : Voiture = new Voiture();
   cars : Voiture[] = [];
 
-  constructor(private voitureService: VoitureService){}
+  constructor(private voitureService: VoitureService, private router: Router){}
+
+  carDetail(id : number | undefined){
+    this.router.navigate(['car_details', id]);
+      }
 
  
   

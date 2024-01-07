@@ -12,6 +12,7 @@
         <p>{{ car.couleur }}</p>
         <td>{{ car.dispo ? 'Disponible' : 'Non disponible' }}</td>
         <p>{{ car.agence.ville }}</p>
+        <button class="btnn" (click)="carDetail(car.id)">View Details</button>
         
       </div>
     </div>

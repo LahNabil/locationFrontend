@@ -4,6 +4,7 @@ import { VoitureService } from '../voiture/voiture.service';
 
 
 import SwiperCore, { Navigation, Pagination} from 'swiper';
+import { Router } from '@angular/router';
 
 // install Swiper modules
 SwiperCore.use([Navigation, Pagination]);
@@ -22,7 +23,7 @@ export class HomeComponent {
   car : Voiture = new Voiture();
   cars : Voiture[] = [];
 
-  constructor(private voitureService: VoitureService){}
+  constructor(private voitureService: VoitureService, private router: Router){}
 
  
   
@@ -31,6 +32,10 @@ export class HomeComponent {
     this.cars = data;
     })
   }
+  carDetail(id : number | undefined){
+    this.router.navigate(['car_details', id]);
+      }
+      
   ngOnInit(){
     this.getVoiture();
   }

@@ -33,6 +33,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,7 +56,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     CarsComponent,
     CarDetailsComponent,
-    AboutComponent,
+    AboutComponent
     
   ],
   imports: [

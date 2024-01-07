@@ -21,7 +21,7 @@
           <p>{{ car.modele }}</p>
           <div class="oo">
             <span class="price">{{ car.prix }}/day</span>
-          <button>View Details</button>
+          <button (click)="carDetail(car.id)">View Details</button>
 
           </div>
           

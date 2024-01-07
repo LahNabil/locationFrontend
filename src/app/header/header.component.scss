@@ -7,12 +7,17 @@ header {
     background-color: #333;
     color: #fff;
     padding: 15px 0;
+    display: flex;
+    flex-direction: row;
+
 }
 
 .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
+    
 }
 
 #logo img {
@@ -37,9 +42,11 @@ nav a {
     font-weight: bold;
     font-size: 16px;
     transition: color 0.3s ease;
+    font-size: 1rem;
 }
 
 nav a:hover {
+    
     color: #ffd700; /* Changez la couleur au survol selon votre préférence */
 }
 
@@ -53,3 +60,33 @@ nav a:hover {
 .menu-has-children:hover ul {
     display: block;
 }
+.btn {
+    // display: inline-block;
+    padding: 10px 20px;
+    background-color: #340561;
+    color: #000;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    
+
+    &:hover {
+      background-color: #ffdb4d;
+    }
+  }
+  #nav-menu-container{
+    display: flex;
+    justify-content: space-between;
+
+    
+  }
+  .links{
+    
+    display: flex;
+  }
+  .sss{
+    display: flex;
+    flex-direction: row;
+  }

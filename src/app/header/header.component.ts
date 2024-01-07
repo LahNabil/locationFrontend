@@ -30,6 +30,16 @@ export class HeaderComponent {
     })
   }
 
+  logout(){
+    const isConfirmed = window.confirm("voulez vous se deconnecter ?");
+    if (isConfirmed) {
+    this.userService.logout().subscribe(data =>{
+      console.log(data);
+      window.location.reload();
+    });
+  }
+  }
+  
   
 
   getUserService(){

@@ -15,15 +15,45 @@
              <!-- car-details.component.html -->
 
 <div class="car-details-container">
-    <h2>{{ voiture.matricule }} - {{ voiture.date }}</h2>
-    <img src="{{ voiture.photo }}" alt="{{ voiture.marque }} Image">
-  
-    <div class="car-details-info">
-      <p><strong>Brand:</strong> {{ voiture.modele }}</p>
-      <p><strong>Color:</strong> {{ voiture.couleur }}</p>
-      <p><strong>Price:</strong> {{ voiture.prix | currency:'USD':'symbol' }}</p>
-      <p><strong>Description:</strong> {{ voiture.marque }}</p>
+    <div class="container">
+    <div class="product-banner">
+    <img src="{{ voiture.photo }}" alt="{{ voiture.marque }}" class="img-cover">
     </div>
+    <div class="produc-content">
+        <p class="product-subtitle"><b>{{voiture.modele}}</b></p>
+        <h1 class="h1 product-title">{{voiture.marque}}</h1>
+
+        <div class="wrapper">
+        <span class="price" data-total-price="">
+            {{voiture.prix}} DH
+        </span>
+        <span class="badge">20%</span>
+        <del class="del">1500.00 DH</del>
+        </div>
+
+        <h2 class="car_cri"><b>{{voiture.dispo ? 'Disponible' : 'Non disponible'}}</b></h2>
+        <h2 class="car_cri">{{voiture.carburant}}</h2>
+        <h2 class="car_cri">{{voiture.date}}</h2>
+        <h2 class="car_cri">{{voiture.agence.nom}}</h2>
+
+
+
+
+        <!-- dispo: boolean | undefined;
+    couleur: string | undefined;
+    carburant: string | undefined;
+    date: Date | undefined;
+    photo: string | undefined;
+    assurance!: Assurance; // Assuming Assurance is another model
+    agence!: Agence ; -->
+
+    </div>
+    </div>
+
+    <!-- <h2>{{ voiture.matricule }} - {{ voiture.date }}</h2> -->
+    
+  
+    
   
     <button (click)="goToVoitureHome()">Go Back to Car List</button>
   </div>

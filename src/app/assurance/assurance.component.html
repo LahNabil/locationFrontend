@@ -39,7 +39,7 @@
             <td>{{ assurance.nom }}</td>
             <td>{{ assurance.type }}</td> <!-- Use Angular date pipe for formatting -->
             <td>{{ assurance.prix }}</td>
-            <td>{{ assurance.date_debut }}</td>
+            <td>{{ assurance.date_debut | date:'dd/MM/yyyy'  }}</td>
             <td>{{ assurance.date_fin }}</td>
 
             <td>

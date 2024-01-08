@@ -30,6 +30,9 @@ import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TopwidgetsComponent } from './topwidgets/topwidgets.component';
+import { ChartModule } from 'angular-highcharts';
+import { SalesByMonthComponent } from './sales-by-month/sales-by-month.component';
+import { SalesByCategoryComponent } from './sales-by-category/sales-by-category.component';
 
 
 
@@ -60,7 +63,9 @@ import { TopwidgetsComponent } from './topwidgets/topwidgets.component';
     CarDetailsComponent,
     AboutComponent,
     DashboardComponent,
-    TopwidgetsComponent
+    TopwidgetsComponent,
+    SalesByMonthComponent,
+    SalesByCategoryComponent
     
   ],
   imports: [
@@ -72,6 +77,7 @@ import { TopwidgetsComponent } from './topwidgets/topwidgets.component';
     SwiperModule,
     MatIconModule,
     ReactiveFormsModule,
+    ChartModule
   ],
   providers: [],
   bootstrap: [AppComponent]

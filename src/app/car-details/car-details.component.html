@@ -33,7 +33,7 @@
 
         <h2 class="car_cri"><b>{{voiture.dispo ? 'Disponible' : 'Non disponible'}}</b></h2>
         <h2 class="car_cri">{{voiture.carburant}}</h2>
-        <h2 class="car_cri">{{voiture.date}}</h2>
+        <h2 class="car_cri">{{ voiture.date | date:'dd/MM/yyyy' }}</h2>
         <h2 class="car_cri">{{voiture.agence.nom}}</h2>
 
 
@@ -55,6 +55,6 @@
   
     
   
-    <button (click)="goToVoitureHome()">Go Back to Car List</button>
+    <button class="btn" (click)="goToVoitureHome()">Go Back to Car List</button>
   </div>
   

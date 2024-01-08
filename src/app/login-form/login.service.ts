@@ -20,6 +20,9 @@ import { LoginDto } from './loginDto.model';
   logout(): Observable<any>{
     return this.httpClient.delete(`${this.baseUrl}/logoutSession`);
   }
+  getSumUsers(): Observable<number>{
+    return this.httpClient.get<number>(`${this.baseUrl}/sumusers`);
+  }
 
   deleteUser(id:number | undefined) : Observable<Object>{
     return this.httpClient.delete(`${this.baseUrl}/delete/${id}`);

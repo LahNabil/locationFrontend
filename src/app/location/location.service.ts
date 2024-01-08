@@ -20,6 +20,15 @@ export class LocationService {
   addLocation(location: Location): Observable<Object>{
       return this.httpClient.post(`${this.baseUrl}/add`, location);
       }
+  getSumLocations(): Observable<number>{
+        return this.httpClient.get<number>(`${this.baseUrl}/sumlocations`);
+      }
+  getSumUsers(): Observable<number>{
+        return this.httpClient.get<number>(`${this.baseUrl1}/sumusers`);
+      }
+  getSumVoiture(): Observable<number>{
+        return this.httpClient.get<number>(`${this.baseUrl2}/sumvoitures`);
+      }
   
   getLocationList() : Observable<Location[]>{
     return this.httpClient.get<Location[]>(`${this.baseUrl}/`);

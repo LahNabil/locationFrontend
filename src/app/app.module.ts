@@ -28,6 +28,8 @@ import { CarsComponent } from './cars/cars.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { AboutComponent } from './about/about.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TopwidgetsComponent } from './topwidgets/topwidgets.component';
 
 
 
@@ -56,7 +58,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     CarsComponent,
     CarDetailsComponent,
-    AboutComponent
+    AboutComponent,
+    DashboardComponent,
+    TopwidgetsComponent
     
   ],
   imports: [

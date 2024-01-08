@@ -23,6 +23,10 @@ export class VoitureService {
     return this.httpClient.get<Voiture>(`${this.baseUrl}/${id}`)
     }
 
+  getSumVoiture(): Observable<number>{
+    return this.httpClient.get<number>(`${this.baseUrl}/sumvoitures`);
+  }
+
   addVoiture(voiture: Voiture): Observable<Object>{
       return this.httpClient.post(`${this.baseUrl}/add`, voiture);
       }

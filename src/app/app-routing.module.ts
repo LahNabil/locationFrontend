@@ -14,6 +14,7 @@ import { UsersComponent } from './users/users.component';
 import { CarsComponent } from './cars/cars.component';
 import { CarDetailsComponent } from './car-details/car-details.component';
 import { AboutComponent } from './about/about.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginFormComponent },
@@ -31,7 +32,8 @@ const routes: Routes = [
     { path: 'assurance/update/:id', component: UpdateAssuranceComponent},
     { path: 'agence', component: AgenceComponent },
     { path: 'agence/update/:id', component: UpdateAgenceComponent},
-    { path: 'users', component: UsersComponent}
+    { path: 'users', component: UsersComponent},
+    { path: 'dashboard', component: DashboardComponent}
     
    ]
   }
